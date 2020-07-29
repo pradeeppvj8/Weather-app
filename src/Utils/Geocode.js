@@ -9,7 +9,7 @@ const geocode = (address, callback) => {
         if (error) { // Low level error ex :- No network
             callback('Could not connect to map box', undefined)
         } else if (response.body.features.length === 0) { // User entered data wrong, hence empty response
-            callback('Could not find validate co-ordinates for the given location')
+            callback('Could not find valid latitude and longitude for the given address')
         } else { // If everything is fine
             callback(undefined, {
                 'latitude': response.body.features[0].center[0],
